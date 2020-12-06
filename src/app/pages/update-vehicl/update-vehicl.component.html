@@ -1,0 +1,28 @@
+<form [formGroup]="myForm" (ngSubmit)="updatevehicle()">
+  <h1>Update Vehicle </h1>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="immatriculation">Immatriculation</label>
+      <input type="text" class="form-control" id="immatriculation" placeholder="155 tn 15874" formControlName="immatriculation"  >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="nomChauffeur">Driver Name</label>
+      <input type="text" class="form-control" id="nomChauffeur" placeholder="Jhon Snow" formControlName="nomChauffeur"  >
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="poids">Weight</label>
+      <input type="text" class="form-control" id="poids" placeholder="30000Kg" formControlName="poids">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="typeDeProduit">Product Type</label>
+      <input type="text" class="form-control" id="typeDeProduit" placeholder="XXXXXX" formControlName="typeDeProduit">
+    </div>
+  </div>
+
+
+  <button type="button" class="btn btn-danger" (click)="close()">Go back</button>
+  <button type="submit" class="btn btn-primary" >Update Vehicle</button>
+
+</form>

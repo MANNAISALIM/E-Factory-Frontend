@@ -1,0 +1,50 @@
+<form [formGroup]="myForm" (ngSubmit)="updateEmploye()">
+  <h1>Update employer </h1>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">First Name</label>
+      <input type="text" class="form-control" id="firstname" placeholder="John" formControlName="firstName"  >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Last Name</label>
+      <input type="text" class="form-control" id="lastname" placeholder="Snow" formControlName="lastName"  >
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Birthday</label>
+      <input type="text" class="form-control" id="birth" placeholder="20/02/2020" formControlName="date_birth">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Cin</label>
+      <input type="text" class="form-control" id="cin" placeholder="12345678" formControlName="identity">
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Email</label>
+      <input type="email" class="form-control" id="inputEmail4" placeholder="john@gmail.com" formControlName="email">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Phone</label>
+      <input type="text" class="form-control" id="inputPassword4" placeholder="98765432" formControlName="contact">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Address</label>
+    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" formControlName="address">
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputEmail4">Salary</label>
+      <input type="text" class="form-control" id="Salaire" placeholder="2000" formControlName="salaire">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword4">Status</label>
+      <input type="text" class="form-control" id="Status" placeholder="permenant" formControlName="status">
+    </div>
+  </div>
+  <button type="button" class="btn btn-danger" (click)="close()">Go back</button>
+  <button type="submit" class="btn btn-primary" >update employer</button>
+
+</form>

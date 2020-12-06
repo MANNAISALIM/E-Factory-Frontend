@@ -1,0 +1,161 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+  <div class="container-fluid">
+    <div class="header-body">
+      <!-- Card stats -->
+      <div class="row">
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">Traffic</h5>
+                  <span class="h2 font-weight-bold mb-0">350,897</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                    <i class="fas fa-chart-bar"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 mb-0 text-muted text-sm">
+                <span class="text-success mr-2"><i class="fa fa-arrow-up"></i> 3.48%</span>
+                <span class="text-nowrap">Since last month</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">New users</h5>
+                  <span class="h2 font-weight-bold mb-0">2,356</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                    <i class="fas fa-chart-pie"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 mb-0 text-muted text-sm">
+                <span class="text-danger mr-2"><i class="fas fa-arrow-down"></i> 3.48%</span>
+                <span class="text-nowrap">Since last week</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">Sales</h5>
+                  <span class="h2 font-weight-bold mb-0">924</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                    <i class="fas fa-users"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 mb-0 text-muted text-sm">
+                <span class="text-warning mr-2"><i class="fas fa-arrow-down"></i> 1.10%</span>
+                <span class="text-nowrap">Since yesterday</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-6">
+          <div class="card card-stats mb-4 mb-xl-0">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <h5 class="card-title text-uppercase text-muted mb-0">Performance</h5>
+                  <span class="h2 font-weight-bold mb-0">49,65%</span>
+                </div>
+                <div class="col-auto">
+                  <div class="icon icon-shape bg-info text-white rounded-circle shadow">
+                    <i class="fas fa-percent"></i>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-3 mb-0 text-muted text-sm">
+                <span class="text-success mr-2"><i class="fas fa-arrow-up"></i> 12%</span>
+                <span class="text-nowrap">Since last month</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page content -->
+<div class="container-fluid mt--7">
+  <!-- Dark table -->
+  <div class="row">
+    <div class="col">
+      <div class="card bg-default shadow">
+        <div class="card-header bg-transparent border-0">
+          <h3 class="text-white mb-0">PRODUCTS LIST</h3>
+          <div class="text-right">
+            <button type="button" class="btn btn-sm btn-danger" (click)="Oncreate()">New Product</button>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <div *ngIf="productsList.length == 0" class="alert alert-info">No Products !</div>
+          <table class="table align-items-center table-flush" *ngIf="productsList.length > 0">
+            <thead class="thead-dark">
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Wording</th>
+              <th scope="col">Description</th>
+              <th scope="col">Price</th>
+              <th scope="col">Tax</th>
+              <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let pjt of productsList">
+              <th scope="row">
+                <div class="media align-items-center">
+                  <div class="media-body">
+                    <span class="mb-0 text-sm"> {{ pjt.id }}</span>
+                  </div>
+                </div>
+              </th>
+              <td>
+                {{ pjt.libProduit}}
+              </td>
+              <td>
+                  <span class="badge badge-dot mr-4">
+                    <i class="bg-warning"></i> {{ pjt.description_produit}}
+                  </span>
+              </td>
+              <td>
+                {{ pjt.prix_produit}}
+              </td>
+              <td>
+                {{ pjt.taxe}}
+              </td>
+              <td class="text-right">
+                <div ngbDropdown placement="bottom-right">
+                  <a class="btn btn-sm btn-icon-only text-light"  ngbDropdownToggle>
+                    <i class="fas fa-ellipsis-v"></i>
+                  </a>
+                  <div ngbDropdownMenu class=" dropdown-menu-right dropdown-menu-arrow">
+                    <a class="dropdown-item" href="javascript:void(0)" (click)="update(pjt)">Update</a>
+                    <a class="dropdown-item" href="javascript:void(0)" (click)="delete(pjt)" >Delete</a>
+
+                  </div>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

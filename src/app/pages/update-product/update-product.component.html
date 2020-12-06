@@ -1,0 +1,35 @@
+<form [formGroup]="myForm" (ngSubmit)="updateproduct()">
+  <h1>Update product </h1>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="libProduit">Product name</label>
+      <input type="text" class="form-control" id="libProduit" placeholder="Product 1" formControlName="libProduit"  >
+    </div>
+    <div class="form-group col-md-6">
+      <label for="description_produit">Description</label>
+      <input type="text" class="form-control" id="description_produit" placeholder=" description for product 1" formControlName="description_produit"  >
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="prix_produit">Product price</label>
+      <input type="number" class="form-control" id="prix_produit" placeholder="300$" formControlName="prix_produit">
+    </div>
+    <div class="form-group col-md-6">
+      <label for="quantité_dispo_produit">Available quantity</label>
+      <input type="number" class="form-control" id="quantité_dispo_produit" placeholder="1800" formControlName="quantité_dispo_produit">
+    </div>
+  </div>
+
+  <div class="form-row">
+    <div class="form-group col-md-8">
+      <label for="taxe">tax</label>
+      <input type="number" class="form-control" id="taxe" placeholder="50$" formControlName="taxe">
+    </div>
+  </div>
+
+
+  <button type="button" class="btn btn-danger" (click)="close()">Go back</button>
+  <button type="submit" class="btn btn-primary" >Update Product</button>
+
+</form>
